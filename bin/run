@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# run
+#
+# Clean, build and start server
+
+# Stop on errors
+# See https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+set -Eeuo pipefail
+
+# from flask tutorial
+# ./bin/database reset #for quick testing
+test -e var/closet.sqlite3
+export FLASK_ENV=development
+FLASK_ENV=development
+export FLASK_APP=closet
+FLASK_APP=closet
+flask run --host 0.0.0.0 --port 8000

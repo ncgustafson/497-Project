@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Your Virtual Closet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" media="screen">
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='scripts/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/flickity.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/page.js') }}"></script>
+</head>
+
+<style>
+    body {
+        background-image: url("{{ url_for('static', filename='images/background.jpg') }}");
+        background-size: 150%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+<body>
+    <h1 style="text-align:center;">
+        <a href="/" style="float: left;">
+            <img style="float: left;" alt="logo" src="{{ url_for('static', filename='images/Modern-Wardrobe.png') }}" height=70
+                width=70>
+        </a>
+        Clean Clothes
+        <a href="{{ url_for('static', filename='outfit.html') }}" style="float: right;">
+            <button>Pick out an outfit!</button>
+        </a>
+    </h1>
+    <hr style="height:20px;color:brown;background-color:#C4A484;">
+    <div class="js-flickity" data-flickity-options='{ "freeScroll": true, "wrapAround": true, "draggable": false }'>
+        {% for type in categories %}
+            <div class="clothing1">
+                <p>{{type}}</p>
+                <p id={{type}}>{{clean_count[type]}}</p>
+                <div class="row">
+                {% for cloth in clothing %}
+                    {% if cloth.cloth_type == type %}
+                    <form action="/make_laundry/" method="post" enctype="multipart/form-data">
+                        <!-- <img onclick="make_laundry()" id={{cloth.id}} src="{{ url_for('uploaded_file', filename='') }}{{ cloth.filename }}"> -->
+                        <input type="hidden" value="{{cloth.filename}}" id="filename" name="filename"> 
+                        <input type="image" id='image' name="image" src="{{ url_for('uploaded_file', filename='') }}{{ cloth.filename }}" alt="submit">
+                    </form>
+                    {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div>
+        <h1>Add New Article of Clothing
+            <div class='info' style="font-size: small; display: inline-block;">
+                <img src="{{ url_for('static', filename='images/information-button.png') }}" class='info-img'>
+                <span class="infotext" style="width: 500px;">
+                    <li>Add new articles of clothing! Just select the category that you want to add to from the drop down menu.</li>
+                    <li>If you want to add a new category, type it in the input box and click "Insert Category". Then you can add
+                    the article of clothing to your new category!</li>
+                </span>
+            </div>
+        </h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required /><br>
+            <select id = "clothing_type" name="clothing_type" required>
+                {% for type in categories %}
+                    <option value="{{type}}">{{type}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" name="create_post" value="upload new clothing"/>
+            <input type="hidden" name="operation" value="create"/>
+        </form>
+        <input type="text" id="new_category" name="category" value="New Category">
+        <button type="button" onclick="insertCategory()">Insert Category</button>
+        <p>{{laundry_count}}</p>
+
+        <h1 style="text-align:center">Dirty Clothes
+            <form action="/move_laundry/" method="post" enctype="multipart/form-data">
+                <input type="submit" name="move_laundry" value="I did my laundry!" />
+            </form>
+        </h1>
+    </div>
+    <hr style="height:20px;color:brown;background-color:#C4A484;">
+    <div class="js-flickity" data-flickity-options='{ "freeScroll": true, "wrapAround": true, "draggable": false }'>
+        {% for type in categories %}
+        <div class="clothing2">
+            <p>{{type}}</p>
+            <p id={{type}}>{{dirty_count[type]}}</p>
+            <div class="row">
+                {% for cloth in laundry %}
+                {% if cloth.cloth_type == type %}
+                <form action="/make_clean/" method="post" enctype="multipart/form-data">
+                    <!-- <img onclick="make_laundry()" id={{cloth.id}} src="{{ url_for('uploaded_file', filename='') }}{{ cloth.filename }}"> -->
+                    <input type="hidden" value="{{cloth.filename}}" id="filename" name="filename">
+                    <input type="image" id='image' name="image"
+                        src="{{ url_for('uploaded_file', filename='') }}{{ cloth.filename }}" alt="submit">
+                </form>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

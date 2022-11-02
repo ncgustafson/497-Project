@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Outfit Picker</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<style>
+		body {
+			background-image: url(background.jpg);
+			background-size: 130%;
+			background-position:center;
+			background-repeat:no-repeat;
+			background-color: rgba(0,0,0,0.5);
+		}
+	</style>
+	<body>
+		<div>
+		<a href="/" style="float: left;">
+			<img style="float: left;" alt="logo" src="images/Modern-Wardrobe.png" height=70
+				width=70>
+		</a>
+		</div>
+		<div class="defslide slider2" style="padding-left: 5%; display: inline-block;">
+            <img src="images/a_temp_left.jpg" class="slidershoesr-img" style="height: auto; width: 70%;">
+            <div>
+				<button class="btn" onclick="shoerPrev()"><</button>
+				<button class="apply" onclick="apply('r')">Apply</button>
+				<button class="btn" onclick="shoerNext()">></button>
+			</div>
+			<div class='info'>
+				<img src="images/information-button.png" class='info-img'>
+				<span class="infotext">Cycle through left shoe!</span>
+			</div>
+			<!-- <label for="membership">Choose a left shoe type:</label>
+			<select name="membership" id="rightCat" onchange="changeCategory('r')">
+				<option value="all">All</option>
+				<option value="casual">Casual</option>
+				<option value="formal" selected>Formal</option>
+			</select> -->
+        </div>
+		<div class="defslide slider" style="padding-left: 5%; display: inline-block;">
+            <img src="images/a_temp.jpg" class="slidershoesl-img" style="height: auto; width: 70%;">
+            <div>
+				<button class="btn" onclick="shoelPrev()"><</button>
+				<button class="apply" onclick="apply('l')">Apply</button>
+				<button class="btn" onclick="shoelNext()">></button>
+			</div>
+			<div class='info'>
+				<img src="images/information-button.png" class='info-img'>
+				<span class="infotext">Cycle through right shoe!</span>
+			</div>
+			<!-- <label for="membership">Choose a shoe type:</label>
+			<select name="membership" id="membership" onchange="changeCategory('l')">
+				<option value="free">Free</option>
+				<option value="bronze">Bronze</option>
+				<option value="silver" selected>Silver</option>
+				<option value="Gold">Gold</option>
+			</select> -->`
+		</div>
+        <div class="defslide slider2" style="padding-left: 5%; display: inline-block;">
+            <img src="images/pants1.jpg" class="sliderpants-img" style="height: auto; width: 70%;">
+            <div>
+				<button class="btn" onclick="pantPrev()"><</button>
+				<button class="apply" onclick="apply('p')">Apply</button>
+				<button class="btn" onclick="pantNext()">></button>
+			</div>
+			<div class='info'>
+				<img src="images/information-button.png" class='info-img'>
+				<span class="infotext">Cycle through pants!</span>
+			</div>
+			<!-- <label for="membership">Choose a pant type:</label>
+			<select name="membership" id="membership" onchange="changeCategory('p')">
+				<option value="free">Free</option>
+				<option value="bronze">Bronze</option>
+				<option value="silver" selected>Silver</option>
+				<option value="Gold">Gold</option>
+			</select> -->
+        </div>
+        <div class="defslide slider3" style="padding-left: 5%; display: inline-block;">
+            <img src="images/shirt1.jpg" class="slidershirt-img" style="height: auto; width: 70%;">
+            <div>
+				<button class="btn" onclick="shirtPrev()"><</button>
+				<button class="apply" onclick="apply('s')">Apply</button>
+				<button class="btn" onclick="shirtNext()">></button>
+			</div>
+			<div class='info'>
+				<img src="images/information-button.png" class='info-img'>
+				<span class="infotext">Cycle through shirts!</span>
+			</div>
+			<!-- <label for="membership">Choose a pant type:</label>
+			<select name="membership" id="membership" onchange="changeCategory('s')">
+				<option value="free">Free</option>
+				<option value="bronze">Bronze</option>
+				<option value="silver" selected>Silver</option>
+				<option value="Gold">Gold</option>
+			</select> -->
+        </div>
+
+		<div class="instructions">
+			<h1>Outfit Editor</h1>
+			<p>1. Cycle through your clothes using < and > buttons.</p>
+			<p>2. Select apply to see your outfit put together!</p>
+		</div>
+        <div class="inbl">
+			<img class = "outfit shoe right" src = "images/b_temp_left.jpg">
+			<img class = "outfit shoe left" src = "images/b_temp.jpg">
+			<img class = "outfit shirt" src = "images/shirt1.jpg">
+			<img class = "outfit pants" src = "images/pants1.jpg">
+			<img class = "person" src = "images/body.png">
+		</div>
+		<script src="scripts/outfit.js"></script>
+	</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Outfit</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<img src="images/body.png">
+	<div class="slider">
+		<img src="images/a.jpg" class="slider-img">
+
+		<button class="btn" onclick="prev()">
+			<< /button>
+				<button class="btn" onclick="next()">></button>
+	</div>
+	<div class='info'>
+		<img src="images/information-button.png" class='info-img'>
+		<span class="infotext">cycle through shoes</span>
+	</div>
+
+	<script src="js/main.js" onmouseover=""></script>
+
+</body>
+
+</html> -->
