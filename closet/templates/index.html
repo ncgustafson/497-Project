@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>Your Virtual Closet</title>
+    <title>App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" media="screen">
     <!-- JS -->
     <script src="{{ url_for('static', filename='scripts/jquery.min.js') }}"></script>
@@ -13,7 +13,7 @@
 
 <style>
     body {
-        background-image: url("{{ url_for('static', filename='images/background.jpg') }}");
+        background-image: url("/closet/static/background.jpg");
         background-size: 150%;
         background-position: center;
         background-repeat: no-repeat;
@@ -21,7 +21,7 @@
     }
 </style>
 
-<body>
+<!--<body>
     <h1 style="text-align:center;">
         <a href="/" style="float: left;">
             <img style="float: left;" alt="logo" src="{{ url_for('static', filename='images/Modern-Wardrobe.png') }}" height=70
@@ -42,7 +42,7 @@
                 {% for cloth in clothing %}
                     {% if cloth.cloth_type == type %}
                     <form action="/make_laundry/" method="post" enctype="multipart/form-data">
-                        <!-- <img onclick="make_laundry()" id={{cloth.id}} src="{{ url_for('uploaded_file', filename='') }}{{ cloth.filename }}"> -->
+                        <img onclick="make_laundry()" id={{cloth.id}} src="{{ url_for('uploaded_file', filename='') }}{{ cloth.filename }}">
                         <input type="hidden" value="{{cloth.filename}}" id="filename" name="filename"> 
                         <input type="image" id='image' name="image" src="{{ url_for('uploaded_file', filename='') }}{{ cloth.filename }}" alt="submit">
                     </form>
@@ -93,7 +93,7 @@
                 {% for cloth in laundry %}
                 {% if cloth.cloth_type == type %}
                 <form action="/make_clean/" method="post" enctype="multipart/form-data">
-                    <!-- <img onclick="make_laundry()" id={{cloth.id}} src="{{ url_for('uploaded_file', filename='') }}{{ cloth.filename }}"> -->
+                     <img onclick="make_laundry()" id={{cloth.id}} src="{{ url_for('uploaded_file', filename='') }}{{ cloth.filename }}"> 
                     <input type="hidden" value="{{cloth.filename}}" id="filename" name="filename">
                     <input type="image" id='image' name="image"
                         src="{{ url_for('uploaded_file', filename='') }}{{ cloth.filename }}" alt="submit">
@@ -105,4 +105,4 @@
         {% endfor %}
     </div>
 </body>
-</html>
+</html>-->
