@@ -1,13 +1,9 @@
 PRAGMA foreign_keys = ON;
 
-CREATE TABLE clothing(
+CREATE TABLE locations(
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  cloth_type VARCHAR(64) NOT NULL, 
-  filename VARCHAR(64) NOT NULL
+  location VARCHAR(64) NOT NULL, 
+  capacity INTEGER(32) NOT NULL,
+  max_capacity INTEGER(32) NOT NULL
 );
 
-CREATE TABLE laundry(
-  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  cloth_type VARCHAR(64) NOT NULL, 
-  filename VARCHAR(64) NOT NULL
-);
