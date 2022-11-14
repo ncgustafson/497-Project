@@ -1,0 +1,22 @@
+{% extends 'base.html.jinja' %}
+
+{% block app_content %}
+
+<body>
+    <div class="container p-4 m-2">
+    <div class="row font-weight-bold">
+       <div class="col m-4 ">Location</div> 
+       <div class="col m-4">Capacity</div> 
+       <div class="col m-4">Percent</div>
+    </div>
+    {% for location in locations %}
+        <div class="row"> 
+            <div class="col m-4 text-success">{{ location["location"] }}</div>
+            <div class="col m-4 ">{{ location["capacity"] }}</div>
+            <div class="col m-4">{{ location["percent_capacity"] }}%</div>
+        </div>
+    {% endfor %}
+    </div>
+</body>
+
+{% endblock %}

@@ -13,13 +13,13 @@ INSERT INTO locations(id, location, capacity, max_capacity)
     VALUES('4', 'DUDERSTADT', 600, 3500);
 
 INSERT INTO locations(id, location, capacity, max_capacity)
-    VALUES('5', 'PANDA_EXPRESS', 15, 200);
+    VALUES('5', 'PANDA_EXPRESS', 45, 100);
 
 INSERT INTO locations(id, location, capacity, max_capacity)
-    VALUES('6', 'BBBB_ATRIUM', 15, 200);
+    VALUES('6', 'BBBB_ATRIUM', 115, 200);
 
 INSERT INTO locations(id, location, capacity, max_capacity)
-    VALUES('7', 'EECS_ATRIUM', 15, 200);
+    VALUES('7', 'EECS_ATRIUM', 15, 100);
 
 INSERT INTO locations(id, location, capacity, max_capacity)
-    VALUES('8', 'PANDA_EXPRESS', 15, 200);
+    VALUES('8', 'BURSLEY_DINING', 85, 300);

@@ -1,0 +1,37 @@
+{% extends 'base.html.jinja' %}
+
+{% block app_content %}
+<style>
+    .frontText {
+        font-size: 4rem
+    }
+</style>
+
+<body>
+    <div class="container p-4 m-2">
+        <div class="row"> 
+            <div class="col fs-1 text-center">A G O R A N K</div>
+        </div>
+
+        <div class="row mt-4"> 
+            <div class="col frontText">Get peace of mind about the crowds before you get there.</div>
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/crowd_jumper.jpg') }}"/>
+            </div>
+        </div>
+        <div class="row mt-5"> 
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/desk_person.png') }}"/>
+            </div>
+            <div class="col">
+                <div class="row frontText"> What is AgoRank?</div>
+                <div class="row fs-4">
+                    AgoRank aims to enable users to feel empowered to reenter spaces by providing them with real-time 
+                    population data for popular spaces near them.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
